@@ -10,9 +10,8 @@ import kotlin.reflect.KClass
  * Note this was designed to be used only with [CompositeViewModelFactory].
  */
 @Target(
+    AnnotationTarget.CLASS,
     AnnotationTarget.FUNCTION,
-    AnnotationTarget.PROPERTY_GETTER,
-    AnnotationTarget.PROPERTY_SETTER
 )
 @Retention(value = AnnotationRetention.RUNTIME)
 @MapKey

@@ -5,16 +5,20 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import com.squareup.anvil.annotations.ContributesMultibinding
 import dev.marcellogalhardo.hilttoanvil.R
+import dev.marcellogalhardo.hilttoanvil.inject.fragment.FragmentKey
+import dev.marcellogalhardo.hilttoanvil.inject.scope.FragmentScope
+import dev.marcellogalhardo.hilttoanvil.inject.viewmodel.ViewModelLocator
 import javax.inject.Inject
 
+@ContributesMultibinding(FragmentScope::class)
+@FragmentKey(SampleFragment::class)
 class SampleFragment @Inject constructor(
-    viewModelProviderFactory: ViewModelProvider.Factory,
+    viewModelLocator: ViewModelLocator,
 ) : Fragment(R.layout.fragment_sample) {
 
-    private val viewModel by viewModels<SampleViewModel> { viewModelProviderFactory }
+    private val viewModel by viewModelLocator.getViewModel<SampleViewModel>(this)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

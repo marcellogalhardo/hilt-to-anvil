@@ -1,10 +1,10 @@
 package dev.marcellogalhardo.hilttoanvil.sample.scope_example
 
-import androidx.lifecycle.ViewModel
 import dev.marcellogalhardo.hilttoanvil.inject.qualifier.SingleIn
+import dev.marcellogalhardo.hilttoanvil.inject.scope.ViewModelScope
 import javax.inject.Inject
 
-@SingleIn(ViewModel::class)
+@SingleIn(ViewModelScope::class)
 class DataSource @Inject constructor() {
     var count = 0
 }

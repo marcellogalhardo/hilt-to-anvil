@@ -6,10 +6,11 @@ import com.squareup.anvil.annotations.MergeSubcomponent
 import dagger.BindsInstance
 import dagger.Subcomponent
 import dev.marcellogalhardo.hilttoanvil.inject.qualifier.SingleIn
+import dev.marcellogalhardo.hilttoanvil.inject.scope.ViewModelScope
 import dev.marcellogalhardo.hilttoanvil.inject.viewmodel.ViewModelMap
 
-@MergeSubcomponent(ViewModel::class)
-@SingleIn(ViewModel::class)
+@MergeSubcomponent(ViewModelScope::class)
+@SingleIn(ViewModelScope::class)
 interface ViewModelComponent {
 
     fun getViewModelMap(): ViewModelMap

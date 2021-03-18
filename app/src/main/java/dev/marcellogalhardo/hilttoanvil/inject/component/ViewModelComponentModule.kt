@@ -1,9 +1,9 @@
 package dev.marcellogalhardo.hilttoanvil.inject.component
 
-import android.app.Application
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
+import dev.marcellogalhardo.hilttoanvil.inject.scope.ApplicationScope
 
-@ContributesTo(Application::class)
+@ContributesTo(ApplicationScope::class)
 @Module(subcomponents = [ViewModelComponent::class])
 interface ViewModelComponentModule

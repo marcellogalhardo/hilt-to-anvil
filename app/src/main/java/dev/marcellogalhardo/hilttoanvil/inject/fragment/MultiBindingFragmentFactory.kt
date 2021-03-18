@@ -1,11 +1,11 @@
 package dev.marcellogalhardo.hilttoanvil.inject.fragment
 
-import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import com.squareup.anvil.annotations.ContributesBinding
 import dev.marcellogalhardo.hilttoanvil.inject.InternalInjectApi
 import dev.marcellogalhardo.hilttoanvil.inject.component.FragmentComponent
+import dev.marcellogalhardo.hilttoanvil.inject.scope.ActivityScope
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -16,7 +16,7 @@ typealias FragmentMap = Map<Class<out Fragment>, @JvmSuppressWildcards Provider<
  *
  * Note this was designed to be used with [FragmentKey].
  */
-@ContributesBinding(Activity::class, FragmentFactory::class)
+@ContributesBinding(ActivityScope::class, FragmentFactory::class)
 class MultiBindingFragmentFactory @Inject constructor(
     private val fragmentComponentFactory: FragmentComponent.Factory
 ) : FragmentFactory() {

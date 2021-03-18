@@ -4,11 +4,11 @@ import android.app.Application
 import com.squareup.anvil.annotations.MergeComponent
 import dagger.BindsInstance
 import dagger.Component
-import dev.marcellogalhardo.hilttoanvil.common.inject.component.DaggerApplicationComponent
 import dev.marcellogalhardo.hilttoanvil.inject.qualifier.SingleIn
+import dev.marcellogalhardo.hilttoanvil.inject.scope.ApplicationScope
 
-@MergeComponent(Application::class)
-@SingleIn(Application::class)
+@MergeComponent(ApplicationScope::class)
+@SingleIn(ApplicationScope::class)
 interface ApplicationComponent {
 
     fun getActivityComponentFactory(): ActivityComponent.Factory

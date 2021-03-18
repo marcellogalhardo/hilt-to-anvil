@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import com.squareup.anvil.annotations.ContributesBinding
 import dev.marcellogalhardo.hilttoanvil.inject.InternalInjectApi
 import dev.marcellogalhardo.hilttoanvil.inject.qualifier.SingleIn
+import dev.marcellogalhardo.hilttoanvil.inject.scope.FragmentScope
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 
@@ -12,8 +13,8 @@ interface FragmentHolder {
 }
 
 @OptIn(InternalInjectApi::class)
-@ContributesBinding(Fragment::class)
-@SingleIn(Fragment::class)
+@ContributesBinding(FragmentScope::class)
+@SingleIn(FragmentScope::class)
 class MainFragmentHolder @Inject constructor() : FragmentHolder {
 
     @InternalInjectApi
